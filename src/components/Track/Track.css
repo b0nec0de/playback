@@ -1,0 +1,30 @@
+.track {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid darkcyan;
+    margin-bottom: 5px;
+}
+
+.track__leftpart {
+    display: flex;
+    width: 50%;
+}
+
+.track__rightpart {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.track__leftpart_artist,
+.track__leftpart_trackname {
+    margin-left: 10px;
+}
+
+.track__rightpart_time {
+    margin-right: 10px;
+}

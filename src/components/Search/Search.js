@@ -1,15 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Search.css';
 
 
-class Search extends Component {
-    render() {
-        return (
-            <div className="search">
-                
-            </div>
-        );
-    }
+const Search = (props) => {
+    
+    return (
+        <div className="search">
+            <form>
+                <input
+                    className="input" 
+                    type='search' 
+                    placeholder='Search..'
+                    onChange={props.onChange}
+                    value={props.value}
+                    ref={el => this.inputRef = el}
+                />   
+            </form>
+        </div>
+    );
 }
 
 export default Search;

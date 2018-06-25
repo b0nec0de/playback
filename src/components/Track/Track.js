@@ -1,20 +1,21 @@
 import React from 'react';
 import './Track.css';
 
-const Track = () => {
+const Track = (props) => {
+    
     return (
         <div className="track">
             <div className="track__leftpart">
                 <span className="track__leftpart_artist">
-                    Artist
+                    {props.artist}
                 </span>
                 <span className="track__leftpart_trackname">
-                    Track
+                    {props.track}
                 </span>
             </div>
             <div className="track__rightpart">
                 <span className="track__rightpart_time">
-                    Time
+                    {props.time}
                 </span>
             </div>   
         </div>

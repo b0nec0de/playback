@@ -1,46 +1,25 @@
-import React, { Component } from 'react';
-import Track from '../Track/Track';
+import React from 'react';
 import './Tracklist.css';
+import Track from '../Track/Track';
 
 
-const tracklist = [
-    {
-        id: 1,
-        artist: 'Jon Bon Jovi',
-        track: 'Living on a prayer',
-        time: '3:25'
-    },
-    {
-        id: 2,
-        artist: 'Aerosmith',
-        track: 'Dream on',
-        time: '4:10'
-    },
-    {
-        id: 3,
-        artist: 'Pompeya',
-        track: 'Power',
-        time: '3:40'
-    }
-]
-class Tracklist extends Component {
-    constructor(props) {
-        super(props);
-            this.state = { 
-                tracklist
-            }    
-    };
+const Tracklist = (props) => {
 
+    const isSearched = (searchValue) => item => 
+		item.artist.toLowerCase().includes(searchValue.toLowerCase());
 
-    render() {
-        return (
-            <div className="tracklist">
-                <Track />
-                <Track />
-                <Track />
-            </div>
-        );
-    }
+    return (
+        <div className="tracklist">
+            {props.list.filter(isSearched(props.pattern)).map(item => (
+                <Track
+                    key={item.id}
+                    artist={item.artist}
+                    track={item.track}
+                    time={item.time}
+                />
+            ))}   
+        </div>
+    );
 }
 
 export default Tracklist;
